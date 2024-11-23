@@ -95,7 +95,7 @@ cc_library(
 
 ### install spdlog
 
-- downloda
+- download
 `https://github.com/gabime/spdlog/tree/936697e5b1944bf1630cfbb9e82144f8bdc32815`
 
 - make
