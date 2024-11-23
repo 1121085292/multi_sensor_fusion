@@ -104,6 +104,7 @@ cc_library(
   # 创建构建目录并设置 CMake 配置
   mkdir build && cd build
   cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DCMAKE_BUILD_TYPE=Release ..
+  or cmake -DSPDLOG_FMT_EXTERNAL=OFF ..
 
   # 编译并安装
   make
