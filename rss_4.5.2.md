@@ -17,25 +17,19 @@ cc_binary(
     name = "libad_rss.so",
     srcs = glob([
         "generated/src/ad/rss/**/*.cpp",
+        "tests/test_support/*.cpp",
         "src/**/*.cpp",
-        # "tests/**/*.cpp",
-        # "tests/generated/ad/rss/**/*.cpp",
     ]) + glob([
         "generated/include/ad/rss/**/*.hpp",
         "include/ad/rss/**/*.hpp",
-        # "tests/test_support/*.hpp",
+        "tests/test_support/*.hpp",
         "src/**/*.hpp",
     ]),
     copts = [
         "-fPIC",
         "-DSAFE_DATATYPES_EXPLICIT_CONVERSION=1",
         "-std=c++14",
-        "-Wfloat-equal",
-        "-Wshadow",
-        "-Wswitch-default",
-        "-Wenum-compare",
-        "-Wformat",
-        "-Wformat-security",
+        "-Werror",
         "-Wall",
         "-Wextra",
         "-pedantic",
@@ -53,7 +47,6 @@ cc_binary(
         "@ad_physics",
         "@boost",
         "@com_google_googletest//:gtest_main",
-        "@spdlog",
     ],
 )
 
@@ -63,19 +56,14 @@ cc_library(
     hdrs = glob([
         "generated/include/ad/rss/**/*.hpp",
         "include/ad/rss/**/*.hpp",
-        # "tests/test_support/*.hpp",
+        "tests/test_support/*.hpp",
         "src/**/*.hpp",
     ]),
     copts = [
         "-fPIC",
         "-DSAFE_DATATYPES_EXPLICIT_CONVERSION=1",
         "-std=c++14",
-        "-Wfloat-equal",
-        "-Wshadow",
-        "-Wswitch-default",
-        "-Wenum-compare",
-        "-Wformat",
-        "-Wformat-security",
+        "-Werror",
         "-Wall",
         "-Wextra",
         "-pedantic",
@@ -86,7 +74,7 @@ cc_library(
         "generated/include",
         "include",
         "src",
-        # "tests/test_support",
+        "tests/test_support",
     ],
 )
 ```
@@ -165,4 +153,13 @@ cc_library(
         "@spdlog//:spdlog"
     ]
 )
+```
+
+## use
+
+```bash
+        "@boost",
+        "@ad_physics",
+        "@ad_rss_lib//:ad_rss",
+        "@com_google_googletest//:gtest_main",
 ```
