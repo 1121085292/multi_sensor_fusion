@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package common_msgs.nav_msgs;
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/geometry_msgs/PoseStamped.proto";
+
+message Path {
+  optional std_msgs.Header header = 1;
+  repeated common_msgs.geometry_msgs.PoseStamped poses = 2;
+}

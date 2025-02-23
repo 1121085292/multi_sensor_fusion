@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package common_msgs.sensor_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/sensor_msgs/RegionOfInterest.proto";
+
+message CameraInfo {
+  optional std_msgs.Header header = 1;
+
+  optional uint32 height = 2;
+  optional uint32 width = 3;
+
+  optional string distortion_model = 4;
+
+  repeated float D = 5;
+
+  repeated float  K = 6;
+
+  repeated float  R = 7;
+
+  repeated float P = 8;
+
+  optional uint32 binning_x = 9;
+  optional uint32 binning_y = 10;
+
+  optional RegionOfInterest roi = 11;
+}

@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package common_msgs.geometry_msgs;
+
+
+import "parking_e2e/common_msgs/geometry_msgs/Point32.proto";
+
+message Polygon {
+  repeated common_msgs.geometry_msgs.Point32 points = 1;
+}

@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package common_msgs.trajectory_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/trajectory_msgs/JointTrajectoryPoint.proto";
+
+message JointTrajectory {
+  optional std_msgs.Header header = 1;
+  repeated string joint_names = 2;
+  repeated JointTrajectoryPoint points = 3;
+}

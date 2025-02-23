@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package common_msgs.visualization_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/geometry_msgs/Pose.proto";
+
+message InteractiveMarkerPose {
+  optional std_msgs.Header header = 1;
+  optional common_msgs.geometry_msgs.Pose pose = 2;
+  optional string name = 3;
+}
+

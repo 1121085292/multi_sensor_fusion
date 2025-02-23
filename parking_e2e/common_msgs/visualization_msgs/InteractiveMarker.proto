@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package common_msgs.visualization_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/geometry_msgs/Pose.proto";
+import "parking_e2e/common_msgs/visualization_msgs/MenuEntry.proto";
+import "parking_e2e/common_msgs/visualization_msgs/InteractiveMarkerControl.proto";
+
+
+message InteractiveMarker {
+  optional std_msgs.Header header = 1;
+  optional common_msgs.geometry_msgs.Pose pose = 2;
+  optional string name = 3;
+  optional string description = 4;
+  optional float scale = 5;
+
+  repeated MenuEntry menu_entries = 6;
+  repeated InteractiveMarkerControl controls = 7;
+}

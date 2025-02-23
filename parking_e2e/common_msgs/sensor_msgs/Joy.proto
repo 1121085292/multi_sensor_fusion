@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package common_msgs.sensor_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+
+message Joy {
+  optional std_msgs.Header header = 1;
+  repeated float axes = 2;
+  repeated int32 buttons = 3;
+}

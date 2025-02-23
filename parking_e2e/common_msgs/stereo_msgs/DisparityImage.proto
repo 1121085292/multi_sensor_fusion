@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package common_msgs.stereo_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/sensor_msgs/Image.proto";
+import "parking_e2e/common_msgs/sensor_msgs/RegionOfInterest.proto";
+
+message DisparityImage {
+  optional std_msgs.Header header = 1;
+  optional common_msgs.sensor_msgs.Image image = 2;
+  optional float f = 3;
+  optional float T = 4;
+  optional common_msgs.sensor_msgs.RegionOfInterest valid_window= 5;
+
+  optional float min_disparity = 6;
+  optional float max_disparity = 7;
+  optional float delta_d = 8;
+}

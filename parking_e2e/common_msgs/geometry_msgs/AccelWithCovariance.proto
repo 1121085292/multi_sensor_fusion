@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package common_msgs.geometry_msgs;
+
+import "parking_e2e/common_msgs/geometry_msgs/Accel.proto";
+
+message AccelWithCovariance {
+  optional Accel accel = 1;
+  repeated float covariance = 2;
+}

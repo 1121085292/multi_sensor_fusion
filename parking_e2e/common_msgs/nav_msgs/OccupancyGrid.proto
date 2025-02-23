@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package common_msgs.nav_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/nav_msgs/MapMetaData.proto";
+
+message OccupancyGrid {
+  optional std_msgs.Header header = 1;
+  optional MapMetaData info = 2;
+  optional bytes data = 3;
+}

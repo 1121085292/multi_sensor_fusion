@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package common_msgs.visualization_msgs;
+
+
+import "parking_e2e/common_msgs/visualization_msgs/InteractiveMarker.proto";
+
+message InteractiveMarkerInit {
+  optional string server_id = 1;
+  optional uint64 seq_num = 2;
+  repeated InteractiveMarker markers = 3;
+}

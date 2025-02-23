@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package common_msgs.shape_msgs;
+
+message Plane {
+  repeated float coef = 1;
+}
+

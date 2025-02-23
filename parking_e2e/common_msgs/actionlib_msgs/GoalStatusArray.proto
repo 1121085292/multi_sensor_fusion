@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package common_msgs.actionlib_msgs;
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/actionlib_msgs/GoalStatus.proto";
+
+message GoalStatusArray {
+  optional std_msgs.Header header = 1;
+  repeated GoalStatus status_list = 2;
+}

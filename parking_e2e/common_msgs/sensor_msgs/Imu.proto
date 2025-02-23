@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package common_msgs.sensor_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/geometry_msgs/Quaternion.proto";
+import "parking_e2e/common_msgs/geometry_msgs/Vector3.proto";
+
+message Imu {
+  optional std_msgs.Header header = 1;
+  optional  common_msgs.geometry_msgs.Quaternion orientation = 2;
+  repeated float orientation_covariance = 3;
+
+  optional common_msgs.geometry_msgs.Vector3 angular_velocity = 4;
+  repeated float angular_velocity_covariance = 5;
+
+  optional common_msgs.geometry_msgs.Vector3 linear_acceleration = 6;
+  repeated float linear_acceleration_covariance = 7;
+}

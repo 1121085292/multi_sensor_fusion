@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package common_msgs.geometry_msgs;
+
+
+import "parking_e2e/common_msgs/geometry_msgs/Twist.proto";
+
+message TwistWithCovariance {
+  optional common_msgs.geometry_msgs.Twist twist = 1;
+  repeated float covariance = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package common_msgs.std_msgs;
+
+message Time {
+  optional uint32 data = 1;
+}

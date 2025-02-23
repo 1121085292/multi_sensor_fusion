@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package common_msgs.sensor_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+
+message FluidPressure {
+  optional std_msgs.Header header = 1;
+  optional float fluid_pressure = 2;
+  optional float variance = 3;
+}

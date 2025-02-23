@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package common_msgs.nav_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/geometry_msgs/Point.proto";
+
+message GridCells {
+  optional std_msgs.Header header = 1;
+  optional float cell_width = 2;
+  optional float cell_height = 3;
+  repeated common_msgs.geometry_msgs.Point cells = 4;
+}

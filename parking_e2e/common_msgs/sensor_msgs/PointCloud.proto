@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package common_msgs.sensor_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/geometry_msgs/Point32.proto";
+import "parking_e2e/common_msgs/sensor_msgs/ChannelFloat32.proto";
+
+
+message PointCloud {
+  optional std_msgs.Header header = 1;
+
+  repeated common_msgs.geometry_msgs.Point32 points = 2;
+
+  repeated ChannelFloat32 channels = 3;
+}

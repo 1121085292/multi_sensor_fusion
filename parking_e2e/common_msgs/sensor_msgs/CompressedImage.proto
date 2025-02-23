@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package common_msgs.sensor_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+
+message CompressedImage {
+  optional std_msgs.Header header = 1;
+  optional string format = 2;
+  optional bytes data = 3;
+}

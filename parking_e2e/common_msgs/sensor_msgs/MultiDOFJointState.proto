@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package common_msgs.sensor_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/geometry_msgs/Transform.proto";
+import "parking_e2e/common_msgs/geometry_msgs/Twist.proto";
+import "parking_e2e/common_msgs/geometry_msgs/Wrench.proto";
+
+message MultiDOFJointState {
+  optional std_msgs.Header header = 1;
+  repeated string joint_names = 2;
+  repeated common_msgs.geometry_msgs.Transform transforms = 3;
+  repeated common_msgs.geometry_msgs.Twist twist = 4;
+  repeated common_msgs.geometry_msgs.Wrench wrench = 5;
+}

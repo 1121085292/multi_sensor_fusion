@@ -1,0 +1,55 @@
+syntax = "proto2";
+
+package common_msgs.visualization_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/std_msgs/ColorRGBA.proto";
+import "parking_e2e/common_msgs/geometry_msgs/Pose.proto";
+import "parking_e2e/common_msgs/geometry_msgs/Point.proto";
+import "parking_e2e/common_msgs/geometry_msgs/Vector3.proto";
+
+message Marker {
+
+  enum TYPE {
+    ARROW=0;
+    CUBE=1;
+    SPHERE=2;
+    CYLINDER=3;
+    LINE_STRIP=4;
+    LINE_LIST=5;
+    CUBE_LIST=6;
+    SPHERE_LIST=7;
+    POINTS=8;
+    TEXT_VIEW_FACING=9;
+    MESH_RESOURCE=10;
+    TRIANGLE_LIST=11;
+  }
+
+  enum ACTION_TYPE {
+    ADD=0;
+    MODIFY=1;
+    DELETE=2;
+    DELETEALL=3;
+  }
+
+  optional std_msgs.Header header = 1;
+  optional string ns = 2;
+  optional int32 id = 3;
+  optional TYPE type = 4;
+  optional ACTION_TYPE action = 5;
+  optional common_msgs.geometry_msgs.Pose pose = 6;
+  optional common_msgs.geometry_msgs.Vector3 scale = 7;
+  optional std_msgs.ColorRGBA color = 8;
+  optional int32 lifetime = 9;
+  optional bool frame_locked = 10;
+
+  repeated common_msgs.geometry_msgs.Point points = 11;
+  repeated std_msgs.ColorRGBA colors = 12;
+
+  optional string text = 13;
+
+  optional string mesh_resource = 14;
+  optional bool mesh_use_embedded_materials = 15;
+}
+

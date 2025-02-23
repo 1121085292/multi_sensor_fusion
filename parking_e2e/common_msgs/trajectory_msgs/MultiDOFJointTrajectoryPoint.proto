@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package common_msgs.trajectory_msgs;
+
+
+import "parking_e2e/common_msgs/geometry_msgs/Transform.proto";
+import "parking_e2e/common_msgs/geometry_msgs/Twist.proto";
+
+message MultiDOFJointTrajectoryPoint {
+  repeated common_msgs.geometry_msgs.Transform transforms = 1;
+  repeated common_msgs.geometry_msgs.Twist velocities = 2;
+  repeated common_msgs.geometry_msgs.Twist accelerations = 3;
+  optional int32 time_from_start = 4;
+}

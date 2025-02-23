@@ -1,0 +1,25 @@
+syntax = "proto2";
+
+package common_msgs.actionlib_msgs;
+
+import "parking_e2e/common_msgs/actionlib_msgs/GoalID.proto";
+
+message GoalStatus {
+  optional common_msgs.actionlib_msgs.GoalID goal_id = 1;
+
+  enum STATUS {
+    PENDING         = 0;
+    ACTIVE          = 1;
+    PREEMPTED       = 2;
+    SUCCEEDED       = 3;
+    ABORTED         = 4;
+    REJECTED        = 5;
+    PREEMPTING      = 6;
+    RECALLING       = 7;
+    RECALLED        = 8;
+    LOST            = 9;
+  }
+  optional STATUS status = 2;
+
+  optional string text = 3;
+}

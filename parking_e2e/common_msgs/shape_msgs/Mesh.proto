@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package common_msgs.shape_msgs;
+
+
+import "parking_e2e/common_msgs/geometry_msgs/Point.proto";
+import "parking_e2e/common_msgs/shape_msgs/MeshTriangle.proto";
+
+message Mesh {
+  repeated MeshTriangle triangles = 1;
+  repeated common_msgs.geometry_msgs.Point vertices = 2;
+}
+

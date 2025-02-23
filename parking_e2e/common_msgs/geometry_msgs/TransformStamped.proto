@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package common_msgs.geometry_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/geometry_msgs/Transform.proto";
+
+
+message TransformStamped {
+  optional std_msgs.Header header = 1;
+  optional string child_frame_id = 2;
+  optional common_msgs.geometry_msgs.Transform transform = 3;
+}

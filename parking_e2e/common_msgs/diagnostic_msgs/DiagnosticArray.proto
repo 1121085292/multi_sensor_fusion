@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package common_msgs.diagnostic_msgs;
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+import "parking_e2e/common_msgs/diagnostic_msgs/DiagnosticStatus.proto";
+
+message DiagnosticArray {
+  optional std_msgs.Header header = 1;
+  repeated DiagnosticStatus status = 2;
+}

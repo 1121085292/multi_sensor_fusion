@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package common_msgs.sensor_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+
+message TimeReference {
+  optional std_msgs.Header header = 1;
+  optional uint32 time_ref = 2;
+  optional string source = 3;
+}

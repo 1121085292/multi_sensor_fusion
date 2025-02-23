@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package common_msgs.nav_msgs;
+
+
+import "parking_e2e/common_msgs/geometry_msgs/Pose.proto";
+
+message MapMetaData {
+  optional uint32 map_load_time = 1;
+  optional float resolution = 2;
+  optional uint32 width = 3;
+  optional uint32 height = 4;
+  optional common_msgs.geometry_msgs.Pose origin = 5;
+}

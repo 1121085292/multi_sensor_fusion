@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package common_msgs.sensor_msgs;
+
+
+import "parking_e2e/common_msgs/std_msgs/Header.proto";
+
+message Image {
+  optional std_msgs.Header header = 1;
+  optional uint32 height = 2;
+  optional uint32 width = 3;
+  optional string encoding = 4;
+  optional uint32 is_bigendian = 5;
+  optional uint32 step = 6;
+  optional bytes data = 7;
+}

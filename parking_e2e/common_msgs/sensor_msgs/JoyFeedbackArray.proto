@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package common_msgs.sensor_msgs;
+
+import "parking_e2e/common_msgs/sensor_msgs/JoyFeedback.proto";
+
+message JoyFeedbackArray {
+  repeated JoyFeedback array = 1;
+}
